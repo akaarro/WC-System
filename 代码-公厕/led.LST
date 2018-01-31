@@ -1,0 +1,141 @@
+C51 COMPILER V9.01   LED                                                                   05/14/2017 21:17:18 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE LED
+OBJECT MODULE PLACED IN led.OBJ
+COMPILER INVOKED BY: D:\CSJ\keil_51\C51\BIN\C51.EXE led.c LARGE OMF2 BROWSE DEBUG
+
+line level    source
+
+   1          #include <reg52.h>
+   2          #include <delay.h>
+   3          #include <led.h>
+   4          /*void color_change()
+   5          {
+   6                    uchar fade_1,fade_2,fade_3,fade_4;
+   7                   fade_2=128;
+   8                   fade_4=127;
+   9                   while(fade_2!=0)
+  10                   {
+  11                           for(fade_3=128;fade_3>fade_4;fade_3--)
+  12                           {
+  13                                   LED_R=0;
+  14                                   LED_G=1;
+  15                                   delay_1ms(50);
+  16                           }
+  17                           fade_3=128;
+  18                           fade_4--;
+  19                           for(fade_1=0;fade_1<fade_2;fade_1++)
+  20                           {
+  21                                   LED_R=1;
+  22                                   LED_G=0;
+  23                                   delay_1ms(50);  
+  24                           }
+  25                           fade_1=0;
+  26                           fade_2--;
+  27                   }
+  28          
+  29                   fade_2=128;
+  30                   fade_4=127;
+  31                   while(fade_2!=0)
+  32                   {
+  33                           for(fade_3=128;fade_3>fade_4;fade_3--)
+  34                           {
+  35                                   LED_G=0;
+  36                                   LED_B=1;
+  37                                   delay_1ms(50);
+  38                           
+  39                           }
+  40                           fade_3=128;
+  41                           fade_4--;
+  42                           
+  43                           for(fade_1=0;fade_1<fade_2;fade_1++)
+  44                           {
+  45                                   LED_G=1;
+  46                                   LED_B=0;
+  47                                   delay_1ms(50);
+  48                           }
+  49                           fade_1=0;
+  50                           fade_2--;
+  51                   }
+  52                   fade_2=128;
+  53                   fade_4=127;
+  54          
+  55                   while(fade_2!=0)
+C51 COMPILER V9.01   LED                                                                   05/14/2017 21:17:18 PAGE 2   
+
+  56                   {
+  57                           for(fade_3=128;fade_3>fade_4;fade_3--)
+  58                           {
+  59                                   LED_B=0;
+  60                                   LED_R=1;
+  61                                   delay_1ms(50);
+  62                           }
+  63                           fade_3=128;
+  64                           fade_4--;
+  65                           
+  66                           for(fade_1=0;fade_1<fade_2;fade_1++)
+  67                           {
+  68                                   LED_B=1;
+  69                                   LED_R=0;
+  70                                   delay_1ms(50);
+  71                           }
+  72                           fade_1=0;
+  73                           fade_2--;                         
+  74                   }
+  75           }
+  76           */
+  77           void color_welcome_women()  //想让哪个颜色亮就把它置0，另外的置1
+  78            {
+  79   1              uchar fade;
+  80   1              for(fade=0;fade<3;fade++)
+  81   1              {
+  82   2                      P0=0x00;      //
+  83   2                      delay_1ms(300);
+  84   2                      P0=0xff;      //
+  85   2                      delay_1ms(300);
+  86   2              }
+  87   1        }
+  88           void color_welcome_men()  //想让哪个颜色亮就把它置0，另外的置1
+  89            {
+  90   1      
+  91   1              P0=0xfd;        //11111101
+  92   1              delay_1ms(150);
+  93   1              P0=0xf7;        //11110111
+  94   1              delay_1ms(150);
+  95   1              P0=0xdf;        //11011111
+  96   1              delay_1ms(150);
+  97   1              P0=0x7f;        //01111111
+  98   1              delay_1ms(150);
+  99   1      
+ 100   1              P0=0xfe;        //11111110
+ 101   1              delay_1ms(150);
+ 102   1              P0=0xfb;        //11111011
+ 103   1              delay_1ms(150);
+ 104   1              P0=0xef;        //11101111
+ 105   1              delay_1ms(150);
+ 106   1              P0=0xbf;        //10111111
+ 107   1              delay_1ms(150);
+ 108   1              P0=0xff;
+ 109   1      
+ 110   1        }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    122    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----       1
+   PDATA SIZE       =   ----    ----
+C51 COMPILER V9.01   LED                                                                   05/14/2017 21:17:18 PAGE 3   
+
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

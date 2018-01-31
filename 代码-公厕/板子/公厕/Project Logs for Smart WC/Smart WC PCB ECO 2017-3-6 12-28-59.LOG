@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=LCD1_GND Pin=74hc573_1-12
+Removed Pin From Net: NetName=LCD1_RS Pin=74hc573_1-13
+Removed Pin From Net: NetName=LCD1_RW Pin=74hc573_1-14
+Removed Pin From Net: NetName=LCD1_E Pin=74hc573_1-15
+Added Pin To Net: NetName=LCD1_E Pin=74hc573_1-12
+Added Pin To Net: NetName=LCD1_RW Pin=74hc573_1-13
+Added Pin To Net: NetName=LCD1_RS Pin=74hc573_1-14
+Added Pin To Net: NetName=LCD1_GND Pin=74hc573_1-15
+Added Room: Name=Smart WC

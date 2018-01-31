@@ -1,0 +1,12 @@
+Field=Comment~String~Comment~100|Field=Description~String~Description~100|Field=Designator~String~Designator~100|Field=Footprint~String~Footprint~100|Field=LibRef~String~LibRef~100|Field=Quantity~Integer~Quantity~100|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~Smart WC.PrjPcb|ReportField=ProjectFullPath~G:\daily-work\PCB制作\公厕\Smart WC.PrjPcb|ReportField=Title~Bill of Materials For Project [Smart WC.PrjPcb] (No PCB Document Selected)|ReportField=TotalQuantity~17|ReportField=ReportTime~22:58:16|ReportField=ReportDate~2017/3/6|ReportField=ReportDateTime~2017/3/6 22:58:16|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=Address1~|ReportField=Address2~|ReportField=Address3~|ReportField=Address4~|ReportField=ApprovedBy~|ReportField=Author~|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~2017/3/6|ReportField=CurrentTime~22:58:14|ReportField=Date~|ReportField=DocumentFullPathAndName~G:\daily-work\PCB制作\公厕\Smart WC.SchDoc|ReportField=DocumentName~Smart WC.SchDoc|ReportField=DocumentNumber~|ReportField=DrawnBy~|ReportField=Engineer~|ReportField=ImagePath~|ReportField=ModifiedDate~2017/3/6|ReportField=Organization~|ReportField=ProjectName~Smart WC.PrjPcb|ReportField=Revision~|ReportField=Rule~|ReportField=SheetNumber~|ReportField=SheetTotal~|ReportField=Time~|ReportField=Title~|ReportField=DataSourceFileName~Smart WC.PrjPcb|ReportField=DataSourceFullPath~G:\daily-work\PCB制作\公厕\Smart WC.PrjPcb
+AT89S5X|||LOCK40PIN|AT|1
+RES||10k|AXIAL0.3|RE|1
+74hc573||74hc573, 74hc574|DIP20|Component_1|2
+电解电容|Capacitor|C1|CD4|电解电容|1
+30pf||CAP1, CAP2|RAD0.3|CAP|2
+20PIN||J1, J2|SIP20|20|2
+LCD1602||LCD1, LCD2, LCD3, LCD4|SIP16|LCD1602|4
+RESVR|Potentiometer|R1|VR|RESVR|1
+CON9|Connector|RES-PACK|SIP9|CON9|1
+复位开关||S1|KeyA|微动开关|1
+11.0592MHz||XTAL|XTAL|CRY|1

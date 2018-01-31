@@ -1,0 +1,17 @@
+Change Component DesignItemId : Designator=J1 Old DesignItemId= New DesignItemId=20
+Change Component DesignItemId : Designator=J2 Old DesignItemId= New DesignItemId=20
+Change Component DesignItemId : Designator=CAP1 Old DesignItemId= New DesignItemId=CAP
+Change Component DesignItemId : Designator=CAP2 Old DesignItemId= New DesignItemId=CAP
+Change Component DesignItemId : Designator=XTAL Old DesignItemId= New DesignItemId=CRY
+Change Component DesignItemId : Designator=10k Old DesignItemId= New DesignItemId=RE
+Change Component DesignItemId : Designator=S1 Old DesignItemId= New DesignItemId=微动开关
+Change Component DesignItemId : Designator= Old DesignItemId=AT89S5X New DesignItemId=AT
+Added Member To Class: ClassName=Smart WC Member=Component 10k RES
+Added Member To Class: ClassName=Smart WC Member=Component CAP1 30pf
+Added Member To Class: ClassName=Smart WC Member=Component CAP2 30pf
+Added Member To Class: ClassName=Smart WC Member=Component J1 20PIN
+Added Member To Class: ClassName=Smart WC Member=Component J2 20PIN
+Added Member To Class: ClassName=Smart WC Member=Component S1 复位开关
+Added Member To Class: ClassName=Smart WC Member=Component  AT89S5X
+Added Member To Class: ClassName=Smart WC Member=Component XTAL 11.0592MHz
+Added Room: Name=Smart WC

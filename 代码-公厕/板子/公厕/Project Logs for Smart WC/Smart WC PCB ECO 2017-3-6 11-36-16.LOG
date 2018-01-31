@@ -1,0 +1,58 @@
+Removed Pin From Net: NetName=P26 Pin=LCD1-1
+Change Component Designator: OldDesignator=LCD1 NewDesignator=LCD2
+Added Component: Designator=LCD1(sip16)
+Added Component: Designator=LCD3(sip16)
+Added Component: Designator=LCD4(sip16)
+Added Pin To Net: NetName=P23 Pin=LCD1-1
+Added Pin To Net: NetName=VCC Pin=LCD1-2
+Added Pin To Net: NetName=VO Pin=LCD1-3
+Added Pin To Net: NetName=P22 Pin=LCD1-4
+Added Pin To Net: NetName=P21 Pin=LCD1-5
+Added Pin To Net: NetName=P20 Pin=LCD1-6
+Added Pin To Net: NetName=Q0 Pin=LCD1-7
+Added Pin To Net: NetName=Q1 Pin=LCD1-8
+Added Pin To Net: NetName=Q2 Pin=LCD1-9
+Added Pin To Net: NetName=Q3 Pin=LCD1-10
+Added Pin To Net: NetName=Q4 Pin=LCD1-11
+Added Pin To Net: NetName=Q5 Pin=LCD1-12
+Added Pin To Net: NetName=Q6 Pin=LCD1-13
+Added Pin To Net: NetName=Q7 Pin=LCD1-14
+Added Pin To Net: NetName=VCC Pin=LCD1-15
+Added Pin To Net: NetName=GND Pin=LCD1-16
+Added Pin To Net: NetName=P24 Pin=LCD2-1
+Added Pin To Net: NetName=P25 Pin=LCD3-1
+Added Pin To Net: NetName=VCC Pin=LCD3-2
+Added Pin To Net: NetName=VO Pin=LCD3-3
+Added Pin To Net: NetName=P22 Pin=LCD3-4
+Added Pin To Net: NetName=P21 Pin=LCD3-5
+Added Pin To Net: NetName=P20 Pin=LCD3-6
+Added Pin To Net: NetName=Q0 Pin=LCD3-7
+Added Pin To Net: NetName=Q1 Pin=LCD3-8
+Added Pin To Net: NetName=Q2 Pin=LCD3-9
+Added Pin To Net: NetName=Q3 Pin=LCD3-10
+Added Pin To Net: NetName=Q4 Pin=LCD3-11
+Added Pin To Net: NetName=Q5 Pin=LCD3-12
+Added Pin To Net: NetName=Q6 Pin=LCD3-13
+Added Pin To Net: NetName=Q7 Pin=LCD3-14
+Added Pin To Net: NetName=VCC Pin=LCD3-15
+Added Pin To Net: NetName=GND Pin=LCD3-16
+Added Pin To Net: NetName=P26 Pin=LCD4-1
+Added Pin To Net: NetName=VCC Pin=LCD4-2
+Added Pin To Net: NetName=VO Pin=LCD4-3
+Added Pin To Net: NetName=P22 Pin=LCD4-4
+Added Pin To Net: NetName=P21 Pin=LCD4-5
+Added Pin To Net: NetName=P20 Pin=LCD4-6
+Added Pin To Net: NetName=Q0 Pin=LCD4-7
+Added Pin To Net: NetName=Q1 Pin=LCD4-8
+Added Pin To Net: NetName=Q2 Pin=LCD4-9
+Added Pin To Net: NetName=Q3 Pin=LCD4-10
+Added Pin To Net: NetName=Q4 Pin=LCD4-11
+Added Pin To Net: NetName=Q5 Pin=LCD4-12
+Added Pin To Net: NetName=Q6 Pin=LCD4-13
+Added Pin To Net: NetName=Q7 Pin=LCD4-14
+Added Pin To Net: NetName=VCC Pin=LCD4-15
+Added Pin To Net: NetName=GND Pin=LCD4-16
+Added Member To Class: ClassName=Smart WC Member=Component LCD2 LCD1602
+Added Member To Class: ClassName=Smart WC Member=Component LCD3 LCD1602
+Added Member To Class: ClassName=Smart WC Member=Component LCD4 LCD1602
+Added Room: Name=Smart WC

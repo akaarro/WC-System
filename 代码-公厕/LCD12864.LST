@@ -1,0 +1,176 @@
+C51 COMPILER V9.01   LCD12864                                                              05/14/2017 21:17:18 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE LCD12864
+OBJECT MODULE PLACED IN LCD12864.OBJ
+COMPILER INVOKED BY: D:\CSJ\keil_51\C51\BIN\C51.EXE LCD12864.c LARGE OMF2 BROWSE DEBUG
+
+line level    source
+
+   1          #include <reg52.h>
+   2          #include <delay.h>
+   3          #include <LCD12864.h>
+   4          
+   5          void sendbyte(unsigned char zdata)
+   6          {
+   7   1              unsigned int i;
+   8   1              for(i=0; i<8; i++)
+   9   1              {
+  10   2                      if((zdata << i) & 0x80)
+  11   2                      {
+  12   3                              SID = 1;
+  13   3                      }
+  14   2                      else 
+  15   2                      {
+  16   3                              SID = 0;
+  17   3                      }
+  18   2                      _SCLK = 0;
+  19   2                      _SCLK = 1;
+  20   2              }
+  21   1      }
+  22          void write_com(unsigned char cmdcode)
+  23          {
+  24   1              CS = 1;
+  25   1              sendbyte(0xf8);
+  26   1              sendbyte(cmdcode & 0xf0);
+  27   1              sendbyte((cmdcode << 4) & 0xf0);
+  28   1              delay_100us(2);
+  29   1      }
+  30          void write_data(unsigned char Dispdata)
+  31          {
+  32   1              CS = 1;
+  33   1              sendbyte(0xfa);
+  34   1              sendbyte(Dispdata & 0xf0);
+  35   1              sendbyte((Dispdata << 4) & 0xf0);
+  36   1              delay_100us(2);
+  37   1      }
+  38          void lcdinit()
+  39          {  
+  40   1              RST = 0;
+  41   1              delay_100us(100);
+  42   1              RST = 1;
+  43   1              delay_100us(20000);
+  44   1              write_com(0x30);//基本指令集动作
+  45   1              delay_100us(50);
+  46   1              write_com(0x0c);//不整体显示
+  47   1              delay_100us(50);
+  48   1      //      write_com(0x34);//扩充指令集动作
+  49   1      //      delay_100us(50);
+  50   1      //      write_com(0x06);//反白
+  51   1      //      delay_100us(50);
+  52   1      //      write_com(0x30);//基本指令集动作
+  53   1      //      delay_100us(50);
+  54   1      
+  55   1      }
+C51 COMPILER V9.01   LCD12864                                                              05/14/2017 21:17:18 PAGE 2   
+
+  56          void hzkdis(unsigned char code *s)//显示字符串
+  57          {  
+  58   1              while(*s > 0)
+  59   1          { 
+  60   2                              write_data(*s);
+  61   2                              s++;
+  62   2                              delay_100us(50);
+  63   2          }
+  64   1      }
+  65          void welcome()
+  66          {
+  67   1              write_com(0x01);
+  68   1              delay_100us(50);
+  69   1              write_com(0x03);
+  70   1              delay_100us(50);    
+  71   1              write_com(0x80);//位置，以后都是
+  72   1              hzkdis("欢迎使用!");
+  73   1              write_com(0x90);
+  74   1              hzkdis("公厕资源调配系统");
+  75   1              write_com(0x88);
+  76   1              hzkdis("欢迎联系");
+  77   1              write_com(0x98);
+  78   1              hzkdis("TEL:15922861093");
+  79   1      }
+  80          void women_display_num(uchar num)
+  81          {
+  82   1              write_com(0x01);
+  83   1              delay_100us(50);        
+  84   1              write_com(0x03);
+  85   1              delay_100us(50);    
+  86   1              write_com(0x80);//位置，以后都是
+  87   1              hzkdis("欢迎使用，女士！");
+  88   1              write_com(0x90);
+  89   1              hzkdis("请前往：");
+  90   1              write_com(0x88);
+  91   1              write_data(num);
+  92   1              delay_100us(50);
+  93   1              write_com(0x89);
+  94   1              hzkdis("号位 ");
+  95   1              write_com(0x98);
+  96   1              hzkdis("祝您今日愉快~");        
+  97   1      }
+  98          void men_display_num(uchar num)
+  99          {
+ 100   1              write_com(0x01);
+ 101   1              delay_100us(50);        
+ 102   1              write_com(0x03);
+ 103   1              delay_100us(50);    
+ 104   1              write_com(0x80);//位置，以后都是
+ 105   1              hzkdis("欢迎使用，先生！");
+ 106   1              write_com(0x90);
+ 107   1              hzkdis("请前往：");
+ 108   1              write_com(0x88);
+ 109   1              write_data(num);
+ 110   1              delay_100us(50);
+ 111   1              write_com(0x89);
+ 112   1              hzkdis("号位 ");
+ 113   1              write_com(0x98);
+ 114   1              hzkdis("祝您今日愉快~");        
+ 115   1      }
+ 116          void women_full()
+ 117          {
+C51 COMPILER V9.01   LCD12864                                                              05/14/2017 21:17:18 PAGE 3   
+
+ 118   1              write_com(0x01);
+ 119   1              delay_100us(50);
+ 120   1              write_com(0x03);
+ 121   1              delay_100us(50);    
+ 122   1              write_com(0x80);//位置，以后都是
+ 123   1              hzkdis("非常抱歉，女士！");
+ 124   1              write_com(0x90);
+ 125   1              hzkdis("本公厕目前无多余");
+ 126   1              write_com(0x88);
+ 127   1              hzkdis("的蹲位！");
+ 128   1              write_com(0x98);
+ 129   1              hzkdis("请耐心等待");                   
+ 130   1      }
+ 131          void men_full()
+ 132          {
+ 133   1              write_com(0x01);
+ 134   1              delay_100us(50);
+ 135   1              write_com(0x03);
+ 136   1              delay_100us(50);    
+ 137   1              write_com(0x80);//位置，以后都是
+ 138   1              hzkdis("非常抱歉，先生！");
+ 139   1              write_com(0x90);
+ 140   1              hzkdis("本公厕目前无多余");
+ 141   1              write_com(0x88);
+ 142   1              hzkdis("的蹲位！");
+ 143   1              write_com(0x98);
+ 144   1              hzkdis("请耐心等待");                   
+ 145   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    595    ----
+   CONSTANT SIZE    =    185    ----
+   XDATA SIZE       =   ----       4
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

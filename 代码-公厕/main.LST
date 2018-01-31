@@ -1,0 +1,197 @@
+C51 COMPILER V9.01   MAIN                                                                  05/14/2017 21:17:17 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\CSJ\keil_51\C51\BIN\C51.EXE main.c LARGE OMF2 BROWSE DEBUG
+
+line level    source
+
+   1          #include <reg52.h>
+   2          #include <delay.h>
+   3          #include <LCD12864.h>
+   4          #include <LCD1602.h>
+   5          #include <led.h>
+   6          #include <motor.h>
+   7          #include <isd4004.h>
+   8          #include <hcsr04.h>
+   9           #include <STDIO.H>
+  10          uint location[4]=   //蹲位数据
+  11          {0,1,2,1};
+  12          extern uchar key;               //key.c中的外部变量
+  13          extern bit       flag_hc;       //hcsr04.c中的外部变量
+  14          #define PORT_1 P1       
+  15          bit   FLAG_ON;
+  16          uchar time_flag;
+  17          uchar R_DAT,G_DAT;B_DAT;
+  18          uchar key_return;
+  19          uchar PWM_HL,REPEAT;
+  20          float distance;
+  21          void Init_INT0()
+  22          {
+  23   1       EX0=1;    //开启外部中断 0
+  24   1       IT0=1;          //设置成低电平触发，1为下降沿触发
+  25   1       EX1=1;    //开启外部中断 1
+  26   1       IT1=1;          //设置成低电平触发，1为下降沿触发
+  27   1       EA=1;     //开启总中断
+  28   1       PX1=1;
+  29   1       PX0=1;
+  30   1      }
+  31          void main()
+  32          {
+  33   1              uint i;
+  34   1              Init_INT0();  //外部中断初始化
+  35   1              delay_1ms(500);
+  36   1              init_hc();//初始化hcsr04
+  37   1              CH = 0;//12864选择串行
+  38   1              delay_100us(1);
+  39   1              lcdinit();//12864液晶屏初始化
+  40   1              //init();//1602初始化
+  41   1              delay_1ms(1);
+  42   1              welcome();//显示汉字
+  43   1                                              
+  44   1              while(1)
+  45   1              {
+  46   2                      P0=0XFF;
+  47   2                      for(i=0;i<4;i++)
+  48   2                      {
+  49   3                              if(location[i]!=0)
+  50   3                              {
+  51   4                                      switch(i)
+  52   4                                      {
+  53   5                                              case 0:
+  54   5                                                      P0&=0xfd;
+  55   5                                                      break;
+C51 COMPILER V9.01   MAIN                                                                  05/14/2017 21:17:17 PAGE 2   
+
+  56   5                                              case 1:
+  57   5                                                      P0&=0xf7;
+  58   5                                                      break;
+  59   5                                              case 2:
+  60   5                                                      P0&=0xdf;
+  61   5                                                      break;
+  62   5                                              case 3:
+  63   5                                                      P0&=0x7f;
+  64   5                                                      break;
+  65   5                                      }
+  66   4                              }                     
+  67   3                      }
+  68   2                      i=0;
+  69   2                      if(key_return==2)        //女生
+  70   2                              {
+  71   3                                      while(location[i]!=0&&i<=3)
+  72   3                                      {
+  73   4                                              i++;    
+  74   4                                      };   //先检查坑位
+  75   3                                      if(i==4)
+  76   3                                      {
+  77   4                                              i=0;
+  78   4                                              women_full();       //坑位已满
+  79   4                                              delay_1ms(2000);        
+  80   4                                              welcome();
+  81   4                                      }
+  82   3                                      else
+  83   3                                      {
+  84   4                                              play(0x00);                //语音模块欢迎女生
+  85   4                                              location[i]=2;         //该坑位分配给女生
+  86   4                                              color_welcome_women();       //灯光变换表示欢迎
+  87   4                                              women_display_num('1'+i);        //显示屏显示坑位
+  88   4                                              delay_1ms(2000);
+  89   4                                              welcome();
+  90   4                                              i=0;
+  91   4                                      }                   
+  92   3                                      
+  93   3                                      key_return=0;
+  94   3                              }
+  95   2                      else if(key_return==1)   //男生
+  96   2                              {
+  97   3                                      while(location[i]!=0&&i<=3)
+  98   3                                      {
+  99   4                                              i++;    
+ 100   4                                      };   //先检查坑位
+ 101   3                                      if(i==4)
+ 102   3                                      {
+ 103   4                                              i=0;
+ 104   4                                              men_full();       //坑位已满
+ 105   4                                              delay_1ms(2000);        
+ 106   4                                              welcome();
+ 107   4                                      }
+ 108   3                                      else
+ 109   3                                      {
+ 110   4                                              
+ 111   4                                              play(0x100);               //语音模块欢迎男生   
+ 112   4                                              location[i]=1;         //该坑位分配给男生
+ 113   4                                              color_welcome_men();       //灯光变换表示欢迎
+ 114   4                                              men_display_num('1'+i);  //显示屏显示坑位
+ 115   4                                              delay_1ms(2000);
+ 116   4                                              welcome();
+ 117   4                                              i=0;
+C51 COMPILER V9.01   MAIN                                                                  05/14/2017 21:17:17 PAGE 3   
+
+ 118   4                                      }                                 
+ 119   3                                      key_return=0;
+ 120   3                              }
+ 121   2                      delay_1ms(300);
+ 122   2                      time_flag++;
+ 123   2                      if(time_flag==10) //3s
+ 124   2                      {
+ 125   3                              time_flag=0;
+ 126   3                              distance=hcsr04_once();
+ 127   3                              if(distance>=15&&location[0]!=0)                                                //如果超过距离
+ 128   3                              {
+ 129   4                               if(location[0]==2)      //女生
+ 130   4                               {
+ 131   5                                      play(0x200);           //语音提示
+ 132   5                                      location[0]=0;        //此位已空
+ 133   5                               }
+ 134   4                               else if(location[0]==1)
+ 135   4                               {
+ 136   5                                      play(0x300);               //语音提示
+ 137   5                                      location[0]=0;        //此位已空
+ 138   5                               }
+ 139   4      
+ 140   4                              }
+ 141   3                              distance=0;
+ 142   3                      }
+ 143   2              }
+ 144   1              
+ 145   1      }  
+ 146          void Interrupt0_handler() interrupt 0   //p3^2
+ 147          {
+ 148   1          EA=0;   //首先关闭总中断，以消除按键出现的抖动所产生的干扰
+ 149   1              delay_1ms(200); //同样是为了消除抖动而产生新的中断
+ 150   1              key_return=2;  //女生
+ 151   1              EA=1;            //恢复中断
+ 152   1      }
+ 153          
+ 154          void zd0() interrupt 1           //T0中断用来计数器溢出,超过测距范围
+ 155          {
+ 156   1          flag_hc=1;                                                   //中断溢出标志
+ 157   1      }
+ 158          void Interrupt1_handler() interrupt 2      //p3^3
+ 159          {
+ 160   1          EA=0;   //首先关闭总中断，以消除按键出现的抖动所产生的干扰
+ 161   1              delay_1ms(200); //同样是为了消除抖动而产生新的中断
+ 162   1          key_return=1;     //男生
+ 163   1              EA=1;            //恢复中断
+ 164   1      } 
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    782    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     20       2
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+C51 COMPILER V9.01   MAIN                                                                  05/14/2017 21:17:17 PAGE 4   
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

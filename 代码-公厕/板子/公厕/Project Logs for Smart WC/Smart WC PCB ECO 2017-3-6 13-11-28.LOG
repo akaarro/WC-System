@@ -1,0 +1,169 @@
+Change Component DesignItemId : Designator=J1 Old DesignItemId= New DesignItemId=20
+Change Component DesignItemId : Designator=J2 Old DesignItemId= New DesignItemId=20
+Change Component DesignItemId : Designator=CAP1 Old DesignItemId= New DesignItemId=CAP
+Change Component DesignItemId : Designator=CAP2 Old DesignItemId= New DesignItemId=CAP
+Change Component DesignItemId : Designator=XTAL Old DesignItemId= New DesignItemId=CRY
+Change Component DesignItemId : Designator=10k Old DesignItemId= New DesignItemId=RE
+Change Component DesignItemId : Designator=S1 Old DesignItemId= New DesignItemId=微动开关
+Change Component DesignItemId : Designator= Old DesignItemId=AT89S5X New DesignItemId=AT
+Added Component: Designator=74hc573(DIP20)
+Added Component: Designator=74hc574(DIP20)
+Added Component: Designator=C1(CD4)
+Added Component: Designator=LCD1(SIP16)
+Added Component: Designator=LCD2(SIP16)
+Added Component: Designator=LCD3(SIP16)
+Added Component: Designator=LCD4(SIP16)
+Added Component: Designator=R1(VR)
+Added Component: Designator=RES-PACK(SIP9)
+Added Pin To Net: NetName=GND Pin=74hc573-1
+Added Pin To Net: NetName=P27 Pin=74hc573-2
+Added Pin To Net: NetName=P26 Pin=74hc573-3
+Added Pin To Net: NetName=P25 Pin=74hc573-4
+Added Pin To Net: NetName=P24 Pin=74hc573-5
+Added Pin To Net: NetName=P23 Pin=74hc573-6
+Added Pin To Net: NetName=P22 Pin=74hc573-7
+Added Pin To Net: NetName=P21 Pin=74hc573-8
+Added Pin To Net: NetName=P20 Pin=74hc573-9
+Added Pin To Net: NetName=GND Pin=74hc573-10
+Added Pin To Net: NetName=VCC Pin=74hc573-11
+Added Pin To Net: NetName=P36 Pin=74hc573-20
+Added Pin To Net: NetName=GND Pin=74hc574-1
+Added Pin To Net: NetName=P27 Pin=74hc574-2
+Added Pin To Net: NetName=P26 Pin=74hc574-3
+Added Pin To Net: NetName=P25 Pin=74hc574-4
+Added Pin To Net: NetName=P24 Pin=74hc574-5
+Added Pin To Net: NetName=P23 Pin=74hc574-6
+Added Pin To Net: NetName=P22 Pin=74hc574-7
+Added Pin To Net: NetName=P21 Pin=74hc574-8
+Added Pin To Net: NetName=P20 Pin=74hc574-9
+Added Pin To Net: NetName=GND Pin=74hc574-10
+Added Pin To Net: NetName=VCC Pin=74hc574-11
+Added Pin To Net: NetName=P37 Pin=74hc574-20
+Added Pin To Net: NetName=VCC Pin=C1-1
+Added Pin To Net: NetName=RESET Pin=C1-2
+Added Pin To Net: NetName=VCC Pin=LCD1-2
+Added Pin To Net: NetName=P00 Pin=LCD1-7
+Added Pin To Net: NetName=P01 Pin=LCD1-8
+Added Pin To Net: NetName=P02 Pin=LCD1-9
+Added Pin To Net: NetName=P03 Pin=LCD1-10
+Added Pin To Net: NetName=P04 Pin=LCD1-11
+Added Pin To Net: NetName=P05 Pin=LCD1-12
+Added Pin To Net: NetName=P06 Pin=LCD1-13
+Added Pin To Net: NetName=P07 Pin=LCD1-14
+Added Pin To Net: NetName=VCC Pin=LCD1-15
+Added Pin To Net: NetName=GND Pin=LCD1-16
+Added Pin To Net: NetName=VCC Pin=LCD2-2
+Added Pin To Net: NetName=P00 Pin=LCD2-7
+Added Pin To Net: NetName=P01 Pin=LCD2-8
+Added Pin To Net: NetName=P02 Pin=LCD2-9
+Added Pin To Net: NetName=P03 Pin=LCD2-10
+Added Pin To Net: NetName=P04 Pin=LCD2-11
+Added Pin To Net: NetName=P05 Pin=LCD2-12
+Added Pin To Net: NetName=P06 Pin=LCD2-13
+Added Pin To Net: NetName=P07 Pin=LCD2-14
+Added Pin To Net: NetName=VCC Pin=LCD2-15
+Added Pin To Net: NetName=GND Pin=LCD2-16
+Added Pin To Net: NetName=VCC Pin=LCD3-2
+Added Pin To Net: NetName=P00 Pin=LCD3-7
+Added Pin To Net: NetName=P01 Pin=LCD3-8
+Added Pin To Net: NetName=P02 Pin=LCD3-9
+Added Pin To Net: NetName=P03 Pin=LCD3-10
+Added Pin To Net: NetName=P04 Pin=LCD3-11
+Added Pin To Net: NetName=P05 Pin=LCD3-12
+Added Pin To Net: NetName=P06 Pin=LCD3-13
+Added Pin To Net: NetName=P07 Pin=LCD3-14
+Added Pin To Net: NetName=VCC Pin=LCD3-15
+Added Pin To Net: NetName=GND Pin=LCD3-16
+Added Pin To Net: NetName=VCC Pin=LCD4-2
+Added Pin To Net: NetName=P00 Pin=LCD4-7
+Added Pin To Net: NetName=P01 Pin=LCD4-8
+Added Pin To Net: NetName=P02 Pin=LCD4-9
+Added Pin To Net: NetName=P03 Pin=LCD4-10
+Added Pin To Net: NetName=P04 Pin=LCD4-11
+Added Pin To Net: NetName=P05 Pin=LCD4-12
+Added Pin To Net: NetName=P06 Pin=LCD4-13
+Added Pin To Net: NetName=P07 Pin=LCD4-14
+Added Pin To Net: NetName=VCC Pin=LCD4-15
+Added Pin To Net: NetName=GND Pin=LCD4-16
+Added Pin To Net: NetName=GND Pin=R1-1
+Added Pin To Net: NetName=VCC Pin=R1-2
+Added Pin To Net: NetName=VCC Pin=RES-PACK-1
+Added Pin To Net: NetName=P00 Pin=RES-PACK-2
+Added Pin To Net: NetName=P01 Pin=RES-PACK-3
+Added Pin To Net: NetName=P02 Pin=RES-PACK-4
+Added Pin To Net: NetName=P03 Pin=RES-PACK-5
+Added Pin To Net: NetName=P04 Pin=RES-PACK-6
+Added Pin To Net: NetName=P05 Pin=RES-PACK-7
+Added Pin To Net: NetName=P06 Pin=RES-PACK-8
+Added Pin To Net: NetName=P07 Pin=RES-PACK-9
+Added Pin To Net: NetName=LCD_E1 Pin=74hc573-12
+Added Pin To Net: NetName=LCD_E1 Pin=LCD1-6
+Added Net: Name=LCD_E1
+Added Pin To Net: NetName=LCD_E2 Pin=74hc574-12
+Added Pin To Net: NetName=LCD_E2 Pin=LCD2-6
+Added Net: Name=LCD_E2
+Added Pin To Net: NetName=LCD_E3 Pin=74hc573-16
+Added Pin To Net: NetName=LCD_E3 Pin=LCD3-6
+Added Net: Name=LCD_E3
+Added Pin To Net: NetName=LCD_E4 Pin=74hc574-16
+Added Pin To Net: NetName=LCD_E4 Pin=LCD4-6
+Added Net: Name=LCD_E4
+Added Pin To Net: NetName=LCD_GND1 Pin=74hc573-15
+Added Net: Name=LCD_GND1
+Added Pin To Net: NetName=LCD_GND2 Pin=74hc574-15
+Added Pin To Net: NetName=LCD_GND2 Pin=LCD2-1
+Added Net: Name=LCD_GND2
+Added Pin To Net: NetName=LCD_GND3 Pin=74hc573-19
+Added Pin To Net: NetName=LCD_GND3 Pin=LCD3-1
+Added Net: Name=LCD_GND3
+Added Pin To Net: NetName=LCD_GND4 Pin=74hc574-19
+Added Pin To Net: NetName=LCD_GND4 Pin=LCD4-1
+Added Net: Name=LCD_GND4
+Added Pin To Net: NetName=LCD_RS1 Pin=74hc573-18
+Added Pin To Net: NetName=LCD_RS1 Pin=LCD1-4
+Added Net: Name=LCD_RS1
+Added Pin To Net: NetName=LCD_RS2 Pin=74hc573-14
+Added Pin To Net: NetName=LCD_RS2 Pin=LCD2-4
+Added Net: Name=LCD_RS2
+Added Pin To Net: NetName=LCD_RS3 Pin=74hc574-14
+Added Pin To Net: NetName=LCD_RS3 Pin=LCD3-4
+Added Net: Name=LCD_RS3
+Added Pin To Net: NetName=LCD_RS4 Pin=74hc574-18
+Added Pin To Net: NetName=LCD_RS4 Pin=LCD4-4
+Added Net: Name=LCD_RS4
+Added Pin To Net: NetName=LCD_RW1 Pin=74hc573-13
+Added Pin To Net: NetName=LCD_RW1 Pin=LCD1-5
+Added Net: Name=LCD_RW1
+Added Pin To Net: NetName=LCD_RW2 Pin=74hc574-13
+Added Pin To Net: NetName=LCD_RW2 Pin=LCD2-5
+Added Net: Name=LCD_RW2
+Added Pin To Net: NetName=LCD_RW3 Pin=74hc573-17
+Added Pin To Net: NetName=LCD_RW3 Pin=LCD3-5
+Added Net: Name=LCD_RW3
+Added Pin To Net: NetName=LCD_RW4 Pin=74hc574-17
+Added Pin To Net: NetName=LCD_RW4 Pin=LCD4-5
+Added Net: Name=LCD_RW4
+Added Pin To Net: NetName=VO Pin=LCD1-3
+Added Pin To Net: NetName=VO Pin=LCD2-3
+Added Pin To Net: NetName=VO Pin=LCD3-3
+Added Pin To Net: NetName=VO Pin=LCD4-3
+Added Pin To Net: NetName=VO Pin=R1-3
+Added Net: Name=VO
+Added Member To Class: ClassName=Smart WC Member=Component 10k RES
+Added Member To Class: ClassName=Smart WC Member=Component 74hc573
+Added Member To Class: ClassName=Smart WC Member=Component 74hc574 74hc573
+Added Member To Class: ClassName=Smart WC Member=Component C1 电解电容
+Added Member To Class: ClassName=Smart WC Member=Component CAP1 30pf
+Added Member To Class: ClassName=Smart WC Member=Component CAP2 30pf
+Added Member To Class: ClassName=Smart WC Member=Component J1 20PIN
+Added Member To Class: ClassName=Smart WC Member=Component J2 20PIN
+Added Member To Class: ClassName=Smart WC Member=Component LCD1 LCD1602
+Added Member To Class: ClassName=Smart WC Member=Component LCD2 LCD1602
+Added Member To Class: ClassName=Smart WC Member=Component LCD3 LCD1602
+Added Member To Class: ClassName=Smart WC Member=Component LCD4 LCD1602
+Added Member To Class: ClassName=Smart WC Member=Component R1 RESVR
+Added Member To Class: ClassName=Smart WC Member=Component RES-PACK CON9
+Added Member To Class: ClassName=Smart WC Member=Component S1 复位开关
+Added Member To Class: ClassName=Smart WC Member=Component  AT89S5X
+Added Member To Class: ClassName=Smart WC Member=Component XTAL 11.0592MHz
+Added Room: Name=Smart WC

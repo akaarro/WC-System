@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=VCC Pin=74hc574-11
+Removed Pin From Net: NetName=LCD_E2 Pin=74hc574-12
+Removed Pin From Net: NetName=LCD_RW2 Pin=74hc574-13
+Removed Pin From Net: NetName=LCD_RS3 Pin=74hc574-14
+Removed Pin From Net: NetName=LCD_GND2 Pin=74hc574-15
+Removed Pin From Net: NetName=LCD_E4 Pin=74hc574-16
+Removed Pin From Net: NetName=LCD_RW4 Pin=74hc574-17
+Removed Pin From Net: NetName=LCD_RS4 Pin=74hc574-18
+Removed Pin From Net: NetName=LCD_GND4 Pin=74hc574-19
+Removed Pin From Net: NetName=P37 Pin=74hc574-20
+Added Pin To Net: NetName=P37 Pin=74hc574-11
+Added Pin To Net: NetName=LCD_GND4 Pin=74hc574-12
+Added Pin To Net: NetName=LCD_RS4 Pin=74hc574-13
+Added Pin To Net: NetName=LCD_RW4 Pin=74hc574-14
+Added Pin To Net: NetName=LCD_E4 Pin=74hc574-15
+Added Pin To Net: NetName=LCD_GND2 Pin=74hc574-16
+Added Pin To Net: NetName=LCD_RS3 Pin=74hc574-17
+Added Pin To Net: NetName=LCD_RW2 Pin=74hc574-18
+Added Pin To Net: NetName=LCD_E2 Pin=74hc574-19
+Added Pin To Net: NetName=VCC Pin=74hc574-20
+Added Room: Name=Smart WC
